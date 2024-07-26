@@ -1,9 +1,19 @@
-import React from 'react'
 
-const user = () => {
+import React from "react";
+import DataTableSimple from "./data-table-simple";
+import prisma from "@/prisma/db";
+import UserForm from "@/components/UserForm";
+
+
+const Users = async () => {
+  const users = await prisma.user.findMany();
+
   return (
-    <div>user</div>
-  )
-}
+    <div>
+      <UserForm/>
+      <DataTableSimple users={users} />
+    </div>
+  );
+};
 
-export default user
+export default Users;
