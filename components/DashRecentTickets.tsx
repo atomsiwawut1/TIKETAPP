@@ -34,7 +34,15 @@ const DashRecentTickets = ({ tickets }: Props) => {
                   <div className="ml-4 space-y-1">
                     <Link href={`tickets/${ticket.id}`}>
                       <p>{ticket.title}</p>
-                      <p>{ticket.assignedToUser?.name || "Unassigned"}</p>
+                      <p
+                        className={`p-2 rounded ${
+                          ticket.assignedToUser?.name
+                            ? "text-green-400"
+                            : "text-red-400"
+                        }`}
+                      >
+                        {ticket.assignedToUser?.name || "Unassigned"}
+                      </p>
                     </Link>
                   </div>
                   <div className="ml-auto font-medium">
