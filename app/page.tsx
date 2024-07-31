@@ -2,6 +2,15 @@ import React from "react";
 import prisma from "@/prisma/db";
 import DashRecentTickets from "@/components/DashRecentTickets";
 import DashChart from "@/components/DashChart";
+import { Metadata } from "next";
+
+
+
+export const metadata: Metadata = {
+  title: "Tickle App",
+  description: "Atom",
+};
+
 
 const Dashboard = async () => {
   const tickets = await prisma.ticket.findMany({
