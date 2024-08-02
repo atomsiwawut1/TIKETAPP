@@ -7,7 +7,7 @@ import { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-  title: "Tickle App",
+  title: "Ticket Dashboard",
   description: "Atom",
 };
 
